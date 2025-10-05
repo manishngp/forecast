@@ -1,0 +1,99 @@
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+.search input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: #005ec2;
+}
+
+.previous-cities {
+  margin: 20px 0;
+}
+
+.previous-cities button {
+  margin: 5px;
+  padding: 6px 12px;
+  border: none;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.previous-cities button:hover {
+  background: #bbb;
+}
+
+.loading {
+  font-style: italic;
+  color: #666;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.day-card {
+  background: #f2f2f2;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.day-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+}
+
+.day-card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.day-card img {
+  width: 70px;
+  height: 70px;
+}
+
+.temp {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.desc {
+  text-transform: capitalize;
+  color: #333;
+}
