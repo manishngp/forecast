@@ -43,8 +43,8 @@ function App() {
       
     
 
-// ADD THIS LINE
-console.log(data); // ← this will show the API response in the browser console
+
+console.log(data);
 
 
       if (data.cod !== "200") {
@@ -53,25 +53,10 @@ console.log(data); // ← this will show the API response in the browser console
         return;
       }
 
-      // const dailyData = data.list.filter((item) =>
-      //   item.dt_txt.includes("12:00:00")
-      // );
+      const dailyData = data.list.filter((item) =>
+        item.dt_txt.includes("12:00:00")
+      );
 
-      // Get first forecast for each unique date
-// Get first forecast for each unique day
-const dailyData = [];
-const datesAdded = new Set();
-
-for (let item of data.list) {
-  if (!item.dt_txt) continue; // skip if missing
-
-  const date = item.dt_txt.split(" ")[0]; // YYYY-MM-DD
-  if (!datesAdded.has(date)) {
-    dailyData.push(item);
-    datesAdded.add(date);
-  }
-  if (dailyData.length === 5) break; // only 5 days
-}
 
 setForecast(dailyData);
 
