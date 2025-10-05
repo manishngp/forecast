@@ -1,3 +1,22 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./assets/cloudsbg.jpg');
+  background-size:cover;        
+  background-position: center;   
+  background-repeat: no-repeat;
+  
+}
+
+
+
+
+
+
+
 .app {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -11,30 +30,19 @@
   margin-bottom: 20px;
 }
 
-.search {
-  margin-bottom: 20px;
-}
-
-.search input {
-  padding: 10px;
-  width: 250px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.search button {
-  margin-left: 10px;
-  padding: 10px 15px;
+.search-bar input {
+  background: #ffffff; 
+  border-radius: 15px;
+  padding: 12px 15px;
   border: none;
-  background: #0077ff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  max-width: 400px;
+   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.search button:hover {
-  background: #005ec2;
-}
+
 
 .previous-cities {
   margin: 20px 0;
@@ -58,6 +66,97 @@
   color: #666;
 }
 
+
+
+
+.current-card {
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 100%;
+  max-width: auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.current-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.current-card h2,
+.current-card h4,
+.current-card p {
+  margin: 5px 0;
+}
+
+.row.info-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap; 
+}
+
+.row.info-row div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+.day-card {
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(8px);           
+  -webkit-backdrop-filter: blur(8px);  
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.day-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.day-card .icon {
+  margin: 8px 0;
+}
+
+.temp {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.desc {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  color: #f0f0f0;
+}
+
 .forecast {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -65,35 +164,25 @@
   margin-top: 20px;
 }
 
-.day-card {
-  background: #f2f2f2;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
 
-.day-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
-}
 
-.day-card h3 {
+.get-forecast-btn {
+  background: rgba(255, 255, 255, 0.25); 
+  backdrop-filter: blur(8px);            
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 10px 25px;
   font-size: 1rem;
-  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.day-card img {
-  width: 70px;
-  height: 70px;
-}
-
-.temp {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.desc {
-  text-transform: capitalize;
-  color: #333;
+.get-forecast-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }

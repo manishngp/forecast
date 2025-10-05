@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
+
+import { DateTime } from "luxon";
+import CurrentDayCard from "./components/CurrentDayCard";
+
+
+
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
@@ -8,14 +14,15 @@ import PreviousCities from "./components/PreviousCities";
 import ForecastCard from "./components/ForecastCard";
 import Loading from "./components/Loading";
 
-const API_KEY = "e1350d392250fe5240cf0bc60d100a84" ;
-
+const API_KEY = "e1350d392250fe5240cf0bc60d100a84";
 
 function App() {
   const [city, setCity] = useState("");
   const [forecast, setForecast] = useState([]);
   const [loading, setLoading] = useState(false);
   const [previousCities, setPreviousCities] = useState([]);
+  const [currentData, setCurrentData] = useState(null);
+
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("cities")) || [];
@@ -40,25 +47,37 @@ function App() {
         `https://api.openweathermap.org/data/2.5/forecast?q=${targetCity}&appid=${API_KEY}&units=metric`
       );
       const data = await res.json();
-      
-    
-
-
-console.log(data);
-
 
       if (data.cod !== "200") {
         toast.error("City not found!");
         setLoading(false);
         return;
       }
+           setCurrentData(data); 
 
-      const dailyData = data.list.filter((item) =>
-        item.dt_txt.includes("12:00:00")
-      );
+     
 
+
+     const dailyData = [];
+const datesAdded = new Set();
+const currentDay = DateTime.fromSeconds(data.list[0].dt).toISODate(); // current date
+
+for (let item of data.list) {
+  if (!item.dt) continue; 
+  const date = DateTime.fromSeconds(item.dt).toISODate(); 
+
+  // skip the current day
+  if (date === currentDay) continue;
+
+  if (!datesAdded.has(date)) {
+    dailyData.push(item);
+    datesAdded.add(date);
+  }
+  if (dailyData.length === 5) break; 
+}
 
 setForecast(dailyData);
+
 
       toast.success("Forecast fetched!");
       saveCity(targetCity);
@@ -80,6 +99,18 @@ setForecast(dailyData);
 
       {loading && <Loading />}
 
+     
+{currentData && (
+  <CurrentDayCard
+    city={currentData.city.name}
+    day={currentData.list[0]}
+    sunrise={currentData.city.sunrise}
+    sunset={currentData.city.sunset}
+    timezoneOffset={currentData.city.timezone}
+  />
+)}
+
+
       <div className="forecast">
         {forecast.map((day, idx) => (
           <ForecastCard key={idx} day={day} />
@@ -92,3 +123,9 @@ setForecast(dailyData);
 }
 
 export default App;
+
+
+// // const API_KEY = "e1350d392250fe5240cf0bc60d100a84" ;
+
+
+
