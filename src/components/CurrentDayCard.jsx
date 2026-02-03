@@ -35,9 +35,12 @@ const getWeatherIcon = (weather) => {
 };
 
 const CurrentDayCard = ({ city, day, sunrise, sunset, timezoneOffset }) => {
-  const localTime = DateTime.fromSeconds(day.dt + timezoneOffset).toFormat(
-    "cccc | d LLLL yyyy "
-  );
+  // const localTime = DateTime.fromSeconds(day.dt + timezoneOffset).toFormat(
+  //   "cccc | d LLLL yyyy "
+  // );
+  const localTime = DateTime.local().toFormat(
+  "cccc | d LLLL yyyy"
+);
   const sunriseTime = DateTime.fromSeconds(sunrise + timezoneOffset).toFormat(
     "h:mm a"
   );

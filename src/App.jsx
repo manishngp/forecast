@@ -91,7 +91,7 @@ setForecast(dailyData);
 
   return (
     <div className="app">
-      <h1 className="title">🌤️ 5-Day Weather Forecast</h1>
+      <h1 className="title"> 5-Day Weather Forecast</h1>
 
       <SearchBar city={city} setCity={setCity} getForecast={getForecast} />
 
