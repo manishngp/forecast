@@ -1,16 +1,78 @@
-# React + Vite
+# Weather Forecast App 🌤️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive weather application built with React, providing real-time weather updates and a 5-day forecast for any city worldwide.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Experience the app live here: [https://whetherforecastapp.netlify.app/](https://whetherforecastapp.netlify.app/)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Current Weather**: Displays temperature, humidity, wind speed, and weather conditions.
+- **5-Day Forecast**: Shows daily weather predictions with temperature highs and lows.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **City Search**: Allows users to search for weather information by city name.
+- **Previous Searches**: Remembers and displays recently searched cities.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: JavaScript library for building user interfaces.
+- **Luxon**: Date-time library for handling and formatting dates.
+- **OpenWeatherMap API**: Provides weather data.
+- **React Toastify**: For displaying notifications.
+- **CSS**: Custom styling for a clean and modern look.
+
+## Setup and Installation
+
+To run this project locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/weather-forecast-app.git
+# Weather Forecast App 🌤️
+
+A modern and responsive weather application built with React, providing real-time weather updates and a 5-day forecast for any city worldwide.
+
+## Live Demo
+
+Experience the app live here: [https://whetherforecastapp.netlify.app/](https://whetherforecastapp.netlify.app/)
+
+## Features
+
+- **Current Weather**: Displays temperature, humidity, wind speed, and weather conditions.
+- **5-Day Forecast**: Shows daily weather predictions with temperature highs and lows.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **City Search**: Allows users to search for weather information by city name.
+- **Previous Searches**: Remembers and displays recently searched cities.
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **Luxon**: Date-time library for handling and formatting dates.
+- **OpenWeatherMap API**: Provides weather data.
+- **React Toastify**: For displaying notifications.
+- **CSS**: Custom styling for a clean and modern look.
+
+## Setup and Installation
+
+To run this project locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/weather-forecast-app.git
+2. Navigate into the project directory:
+
+    cd weather-forecast-app
+
+
+3. Install dependencies:
+
+    npm install
+
+
+4. Start the development server:
+
+    npm start
+
